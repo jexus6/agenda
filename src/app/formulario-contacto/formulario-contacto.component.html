@@ -1,0 +1,13 @@
+<p>Funciona</p>
+<form [formGroup]="formularioContacto" (ngSubmit)="notificarCreacionContacto()">
+  <div>
+  <input type="text" placeholder="Nombre" formControlName="nombre">
+</div>
+<div>
+  <span *ngIf="formularioContacto.get('nombre').touched && formularioContacto.get('nombre').invalid"> El campo nombre es obligatorio y debe de terner al menos 
+    3 carácteres.
+  </span>
+</div>
+  <button type="submit"
+  [disabled] = "formularioContacto.invalid"> Guardar </button>
+</form>

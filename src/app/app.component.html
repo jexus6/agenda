@@ -5,7 +5,7 @@
   </h1>
 </div>
 <div>
-  <app-lista-contactos [contactos]="listaContactos"
-  (botonEliminarPulsado)="borrarContacto($event)"
-  ></app-lista-contactos>
+  <app-formulario-contacto (botonGuardarPulsado)="guardarContacto($event)" ></app-formulario-contacto>
+  <app-lista-contactos [contactos]="listaContactos" (botonEliminarPulsado)="borrarContacto($event)">
+  </app-lista-contactos>
 </div>
