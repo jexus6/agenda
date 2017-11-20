@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Output } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import {Contacto} from '../contacto';
 
 
 
@@ -11,7 +12,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 })
 export class FormularioContactoComponent {
 
-  @Output() botonGuardarPulsado = new EventEmitter <any>();
+  @Output() botonGuardarPulsado = new EventEmitter <Contacto>();
 
   formularioContacto: FormGroup;
   constructor(private _formBuilder: FormBuilder) {
@@ -20,12 +21,18 @@ export class FormularioContactoComponent {
 
   private _crearFormulario(): void {
     this.formularioContacto = this._formBuilder.group({
-      nombre: ['', { validators: [Validators.minLength(3), Validators.required] }]
+      nombre: ['', { validators: [Validators.minLength(3), Validators.required] }],
+      apellidos: '',
+      telefono: '',
+      email: '',
+      facebook: '',
+      twitter: ''
     });
   }
 
   notificarCreacionContacto(): void {
-    this.botonGuardarPulsado.emit(this.formularioContacto.value);
+    const contacto = this.formularioContacto.value as Contacto;
+    this.botonGuardarPulsado.emit(contacto);
   }
 
 }
