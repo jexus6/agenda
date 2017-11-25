@@ -1,4 +1,5 @@
 import { EventEmitter, Input, Component, Output } from '@angular/core';
+import { Contacto } from '../contacto';
 
 @Component({
   selector: 'app-lista-contactos',
@@ -6,10 +7,10 @@ import { EventEmitter, Input, Component, Output } from '@angular/core';
   styleUrls: ['./lista-contactos.component.css']
 })
 export class ListaContactosComponent {
-  @Input() contactos: string[];
-  @Output() botonEliminarPulsado = new EventEmitter<string>();
+  @Input() contactos: Contacto[];
+  @Output() botonEliminarPulsado = new EventEmitter<Contacto>();
 
-  notificarContactoEliminar(contacto: string) : void {
+  notificarContactoEliminar(contacto: Contacto) : void {
     this.botonEliminarPulsado.emit(contacto);
   }
 }

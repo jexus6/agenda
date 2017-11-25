@@ -9,21 +9,21 @@ import { Contacto } from './contacto';
 })
 export class AppComponent implements OnInit {
 
-  listaContactos: string[];
+  listaContactos: Contacto[];
 
   constructor(private _contactosService: ContactosService) { }
 
   ngOnInit(): void {
-    console.log('Soy un componente y acabo de despertarme');
+    console.log('APPComponent on Init');
     this.listaContactos = this._contactosService.obtenerContactos();
   }
 
   guardarContacto(contacto: Contacto): void {
-    this._contactosService.crearContacto(contacto.nombre);
+    this._contactosService.crearContacto(contacto);
     this.listaContactos = this._contactosService.obtenerContactos();
   }
 
-  borrarContacto(contacto: string): void {
+  borrarContacto(contacto: Contacto): void {
      this._contactosService.eliminarContacto(contacto);
      this.listaContactos = this._contactosService.obtenerContactos();
   }
