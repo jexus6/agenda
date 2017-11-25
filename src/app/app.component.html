@@ -1,13 +1,25 @@
 <div class="container">
-    <!--The content below is only a placeholder and can be replaced.-->
-    <div style="text-align:center">
-        <h1>
-            Super Agenda
-        </h1>
-    </div>
-    <div>
-        <app-formulario-contacto (botonGuardarPulsado)="guardarContacto($event)"></app-formulario-contacto>
-        <app-lista-contactos [contactos]="listaContactos" (botonEliminarPulsado)="borrarContacto($event)">
-        </app-lista-contactos>
-    </div>
+  <!--The content below is only a placeholder and can be replaced.-->
+  <header>
+    <h1>
+      Super Agenda
+    </h1>
+  </header>
+<!-- Barra de navegación-->
+<nav>
+  <ul>
+    <li>
+      <a routerLink="/nuevo"> Nuevo contacto</a>
+    </li>
+    <li>
+      <a routerLink="/todos">Mis contactos</a>
+    </li>
+  </ul>
+</nav>
+
+  <!-- 
+    Zona dinamica
+-->
+  <router-outlet></router-outlet>
+
 </div>

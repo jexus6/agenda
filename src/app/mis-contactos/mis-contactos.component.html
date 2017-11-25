@@ -1,0 +1,10 @@
+<header>
+  <h5>
+    Nuevo contacto
+  </h5>
+  <hr>
+</header>
+<div>
+  <app-lista-contactos [contactos]="listaContactos" (botonEliminarPulsado)="borrarContacto($event)">
+  </app-lista-contactos>
+</div>

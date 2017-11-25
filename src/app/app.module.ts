@@ -8,13 +8,17 @@ import { AppComponent } from './app.component';
 import { ListaContactosComponent } from './lista-contactos/lista-contactos.component';
 import { ContactosService } from './contactos.service';
 import { FormularioContactoComponent } from './formulario-contacto/formulario-contacto.component';
+import { NuevoContactoComponent } from './nuevo-contacto/nuevo-contacto.component';
+import { MisContactosComponent } from './mis-contactos/mis-contactos.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     ListaContactosComponent,
-    FormularioContactoComponent
+    FormularioContactoComponent,
+    NuevoContactoComponent,
+    MisContactosComponent
   ],
   imports: [
     BrowserModule,
