@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Contacto } from '../contacto';
 import { ContactosService } from '../contactos.service';
+import { Observable } from 'rxjs/Observable';
 
 @Component({
   selector: 'app-mis-contactos',
@@ -9,17 +10,25 @@ import { ContactosService } from '../contactos.service';
 })
 export class MisContactosComponent implements OnInit {
 
-  listaContactos: Contacto[];
-  
+  //listaContactos: Contacto[];
+  contactos$: Observable<Contacto[]>;
   constructor(private _contactosService: ContactosService) { }
 
   ngOnInit() {
-    this.listaContactos = this._contactosService.obtenerContactos();
+
+    /*Otro metodo de subscribirse a  la listaContactos 
+    this._contactosService.obtenerContactos().subscribe((contactos: Contacto[]) => {
+       this.listaContactos = contactos;
+     });*/
+
+    this.contactos$ = this._contactosService.obtenerContactos();
+
   }
 
   borrarContacto(contacto: Contacto): void {
-    this._contactosService.eliminarContacto(contacto);
-    this.listaContactos = this._contactosService.obtenerContactos();
- }
+    //this._contactosService.eliminarContacto(contacto);
+    //this.listaContactos = this._contactosService.obtenerContactos();
+    
+  }
 
 }

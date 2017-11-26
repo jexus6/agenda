@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, Inject } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule} from '@angular/common/http'
 
 import { AppRoutingModule } from './app-routing.module';
 
@@ -20,12 +21,17 @@ import { MisContactosComponent } from './mis-contactos/mis-contactos.component';
     NuevoContactoComponent,
     MisContactosComponent
   ],
+  //Todos los modulos de los cuales depende nuestra app para funcionar.
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule, 
+    HttpClientModule
   ],
+  //Todo lo que quiera inyectarse como dependencia en nuestra app (servicios, clases y valores)
+  //De no hacerlo Angular no sabe como instanciarlo.
   providers: [ContactosService],
+  //Componente raiz de nuestra app.
   bootstrap: [AppComponent]
 })
 export class AppModule { }

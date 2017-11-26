@@ -4,7 +4,17 @@
   </h5>
   <hr>
 </header>
+<!--Para instanciar un componente se usa su 'selector' como etiqueta HTML
+  .Para enlazar datos al componente hijo, usamnos como atributos aquellos que estén 
+  decorados como '@INput' en él.
+Para suscribirnos a sus eventos lo haremos indicando entre parentesis el nombre del mismo, de está decorado en el hijo con '@Output'
+Para recoger datos del evento, sean del tipo que sean , utilizamos la palabra reservada '$event'
+
+Para hecer la suscripción automática a un objeto 'Observable' usamos el pipe async
+de esa forma evitamos realizar al suscripción manual
+-->
+
 <div>
-  <app-lista-contactos [contactos]="listaContactos" (botonEliminarPulsado)="borrarContacto($event)">
+  <app-lista-contactos [contactos]="contactos$ | async" (botonEliminarPulsado)="borrarContacto($event)">
   </app-lista-contactos>
 </div>
