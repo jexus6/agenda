@@ -12,6 +12,7 @@ export class MisContactosComponent implements OnInit {
 
   //listaContactos: Contacto[];
   contactos$: Observable<Contacto[]>;
+  contactoSeleccionado: Contacto;
   constructor(private _contactosService: ContactosService) { }
 
   ngOnInit() {
@@ -25,10 +26,15 @@ export class MisContactosComponent implements OnInit {
 
   }
 
+
+  verDetallesContacto(contacto: Contacto): void{
+    this.contactoSeleccionado = contacto;
+  }
+/*
   borrarContacto(contacto: Contacto): void {
     //this._contactosService.eliminarContacto(contacto);
     //this.listaContactos = this._contactosService.obtenerContactos();
     
-  }
+  }*/
 
 }

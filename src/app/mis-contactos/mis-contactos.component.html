@@ -14,7 +14,12 @@ Para hecer la suscripción automática a un objeto 'Observable' usamos el pipe a
 de esa forma evitamos realizar al suscripción manual
 -->
 
-<div>
-  <app-lista-contactos [contactos]="contactos$ | async" (botonEliminarPulsado)="borrarContacto($event)">
-  </app-lista-contactos>
+<div class="row">
+  <div class="six columns">
+    <app-lista-contactos [contactos]="contactos$ | async" (contactoSeleccionado)="verDetallesContacto($event)">
+    </app-lista-contactos>
+  </div>
+  <div class="six columns">
+    <app-detalles-contacto [contacto]="contactoSeleccionado"></app-detalles-contacto>
+  </div>
 </div>

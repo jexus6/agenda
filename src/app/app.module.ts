@@ -11,6 +11,7 @@ import { ContactosService } from './contactos.service';
 import { FormularioContactoComponent } from './formulario-contacto/formulario-contacto.component';
 import { NuevoContactoComponent } from './nuevo-contacto/nuevo-contacto.component';
 import { MisContactosComponent } from './mis-contactos/mis-contactos.component';
+import { DetallesContactoComponent } from './detalles-contacto/detalles-contacto.component';
 
 
 @NgModule({
@@ -19,7 +20,8 @@ import { MisContactosComponent } from './mis-contactos/mis-contactos.component';
     ListaContactosComponent,
     FormularioContactoComponent,
     NuevoContactoComponent,
-    MisContactosComponent
+    MisContactosComponent,
+    DetallesContactoComponent
   ],
   //Todos los modulos de los cuales depende nuestra app para funcionar.
   imports: [

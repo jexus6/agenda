@@ -42,6 +42,24 @@
       "facebook": "",
       "twitter": "",
       "id": 7
+    },
+    {
+      "nombre": "Pepito",
+      "apellidos": "Los palotes",
+      "telefono": "5555",
+      "email": "sdfsdf@sfs",
+      "facebook": "",
+      "twitter": "",
+      "id": 8
+    },
+    {
+      "nombre": "Pepito",
+      "apellidos": "Los palotes",
+      "telefono": "5555",
+      "email": "sdfsdf@sfs",
+      "facebook": "",
+      "twitter": "",
+      "id": 9
     }
   ]
 }
