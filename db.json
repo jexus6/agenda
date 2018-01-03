@@ -27,21 +27,12 @@
     },
     {
       "nombre": "Pepe",
-      "apellidos": "",
-      "telefono": "",
-      "email": "",
-      "facebook": "",
-      "twitter": "",
+      "apellidos": "Perez",
+      "telefono": "5555 555 555",
+      "email": "fsdfsdf@sfds.com",
+      "facebook": "sdfsdf",
+      "twitter": "@sdfdsf",
       "id": 6
-    },
-    {
-      "nombre": "jklñ",
-      "apellidos": "",
-      "telefono": "",
-      "email": "",
-      "facebook": "",
-      "twitter": "",
-      "id": 7
     },
     {
       "nombre": "Pepito",
@@ -57,8 +48,8 @@
       "apellidos": "Los palotes",
       "telefono": "5555",
       "email": "sdfsdf@sfs",
-      "facebook": "",
-      "twitter": "",
+      "facebook": "facebookpepito",
+      "twitter": "@sdjj",
       "id": 9
     }
   ]

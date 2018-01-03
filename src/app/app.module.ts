@@ -12,16 +12,20 @@ import { FormularioContactoComponent } from './formulario-contacto/formulario-co
 import { NuevoContactoComponent } from './nuevo-contacto/nuevo-contacto.component';
 import { MisContactosComponent } from './mis-contactos/mis-contactos.component';
 import { DetallesContactoComponent } from './detalles-contacto/detalles-contacto.component';
+import { DatosContactoPipe } from './datos-contacto.pipe';
 
 
 @NgModule({
+  //Indicamos todos los componentes, directivas y pipes de nuestra app. 
+  // Si no lo añadidomos nuestra app (módulo) no sabrá cómo pintarlos o utilizarlos
   declarations: [
     AppComponent,
     ListaContactosComponent,
     FormularioContactoComponent,
     NuevoContactoComponent,
     MisContactosComponent,
-    DetallesContactoComponent
+    DetallesContactoComponent,
+    DatosContactoPipe
   ],
   //Todos los modulos de los cuales depende nuestra app para funcionar.
   imports: [
