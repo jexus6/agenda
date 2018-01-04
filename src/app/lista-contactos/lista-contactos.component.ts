@@ -7,6 +7,9 @@ import { Contacto } from '../contacto';
   styleUrls: ['./lista-contactos.component.css']
 })
 export class ListaContactosComponent {
+
+  sentidoOrdenacion = 'asc';
+
   @Input() contactos: Contacto[];
 
 /*  @Output() botonEliminarPulsado = new EventEmitter<Contacto>();
@@ -17,6 +20,10 @@ export class ListaContactosComponent {
   @Output() contactoSeleccionado = new EventEmitter<Contacto>();
   notificarContactoSeleccionado(contacto: Contacto): void {
     this.contactoSeleccionado.emit(contacto);
+  }
+
+  cambiarSentidoOrdenacion(): void {
+    this.sentidoOrdenacion = this.sentidoOrdenacion === 'asc' ? 'desc' : 'asc';
   }
 
 }

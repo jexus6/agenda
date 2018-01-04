@@ -13,6 +13,7 @@ import { NuevoContactoComponent } from './nuevo-contacto/nuevo-contacto.componen
 import { MisContactosComponent } from './mis-contactos/mis-contactos.component';
 import { DetallesContactoComponent } from './detalles-contacto/detalles-contacto.component';
 import { DatosContactoPipe } from './datos-contacto.pipe';
+import { OrdenacionContactosPipe } from './ordenacion-contactos.pipe';
 
 
 @NgModule({
@@ -25,7 +26,8 @@ import { DatosContactoPipe } from './datos-contacto.pipe';
     NuevoContactoComponent,
     MisContactosComponent,
     DetallesContactoComponent,
-    DatosContactoPipe
+    DatosContactoPipe,
+    OrdenacionContactosPipe
   ],
   //Todos los modulos de los cuales depende nuestra app para funcionar.
   imports: [
