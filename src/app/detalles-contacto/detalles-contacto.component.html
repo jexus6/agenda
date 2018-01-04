@@ -3,7 +3,7 @@
     <h5>
       {{contacto.nombre}} {{contacto.apellidos}}
     </h5>
-    
+
   </header>
   <div>
     <!--Para hacer uso de un Pipe, seguido del dato que va a 
@@ -14,6 +14,13 @@
     <hr>
   </div>
   <div>
-    <span>{{contacto.facebook}}  {{contacto.twitter}}</span>
+    <button *ngIf="contacto.facebook" (click)="navegarPerfilFacebook()">
+      <i class="fa fa-facebook-square" aria-hidden="true"></i>
+    </button>
+    <button *ngIf="contacto.twitter" (click)="navegarPerfilTwitter()">
+      <i class="fa fa-twitter-square" aria-hidden="true"></i>
+    </button>
+
+    <span>{{contacto.facebook}} {{contacto.twitter}}</span>
   </div>
 </div>
