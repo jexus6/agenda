@@ -10,7 +10,7 @@ import { Observable } from 'rxjs/Observable';
 })
 export class MisContactosComponent implements OnInit {
 
-  //listaContactos: Contacto[];
+  // listaContactos: Contacto[];
   contactos$: Observable<Contacto[]>;
   contactoSeleccionado: Contacto;
   constructor(private _contactosService: ContactosService) { }
@@ -21,20 +21,27 @@ export class MisContactosComponent implements OnInit {
     this._contactosService.obtenerContactos().subscribe((contactos: Contacto[]) => {
        this.listaContactos = contactos;
      });*/
-
+    this._recuperarContactosDesdeServidor();
+  }
+  private _recuperarContactosDesdeServidor(): void {
     this.contactos$ = this._contactosService.obtenerContactos();
-
   }
 
-
-  verDetallesContacto(contacto: Contacto): void{
+  verDetallesContacto(contacto: Contacto): void {
     this.contactoSeleccionado = contacto;
   }
-/*
-  borrarContacto(contacto: Contacto): void {
-    //this._contactosService.eliminarContacto(contacto);
-    //this.listaContactos = this._contactosService.obtenerContactos();
-    
-  }*/
 
+  preguntarEliminarContacto(contacto: Contacto): void {
+    // Pregunta al usuario
+    if (confirm(`¿Deseas realmente eliminar a ${contacto.nombre} ${contacto.apellidos}?`)) {
+      // Lo eliminamos
+      this._contactosService.eliminarContacto(contacto).subscribe(() => {
+        // Una vez la petion HTTP de la eliminacion ha terminado, deselecionamos
+        // el contacto eliminado 
+        this.contactoSeleccionado = null;
+        // y refrescamos la lista
+        this._recuperarContactosDesdeServidor();
+      });
+    }
+  }
 }

@@ -1,5 +1,6 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { Contacto } from '../contacto';
+
 
 @Component({
   selector: 'app-detalles-contacto',
@@ -7,8 +8,12 @@ import { Contacto } from '../contacto';
   styleUrls: ['./detalles-contacto.component.css']
 })
 export class DetallesContactoComponent  {
+  //Decoración con Output os atributos que emitan datos a un componente padre
+  //estos atributos deben de ser de tipo EvenEmitter
+  @Output() botonEliminarPulsado = new EventEmitter<Contacto>();
 
   @Input() contacto: Contacto;
+
 
   navegarPerfilFacebook(): void {
     const ruta = `https://wwww.facebook.com/${this.contacto.facebook}`;
@@ -20,4 +25,7 @@ export class DetallesContactoComponent  {
     window.open(ruta, '_blank');
   }
 
+  notificarContactoEliminar(): void {
+    this.botonEliminarPulsado.emit(this.contacto);
+  }
 }

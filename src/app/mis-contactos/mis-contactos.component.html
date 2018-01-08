@@ -1,6 +1,6 @@
 <header>
   <h5>
-    Nuevo contacto
+    Mis contactos
   </h5>
   <hr>
 </header>
@@ -20,6 +20,6 @@ de esa forma evitamos realizar al suscripción manual
     </app-lista-contactos>
   </div>
   <div class="six columns">
-    <app-detalles-contacto [contacto]="contactoSeleccionado"></app-detalles-contacto>
+    <app-detalles-contacto [contacto]="contactoSeleccionado" (botonEliminarPulsado)="preguntarEliminarContacto($event)"></app-detalles-contacto>
   </div>
 </div>

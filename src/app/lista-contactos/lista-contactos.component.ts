@@ -12,10 +12,7 @@ export class ListaContactosComponent {
 
   @Input() contactos: Contacto[];
 
-/*  @Output() botonEliminarPulsado = new EventEmitter<Contacto>();
-  notificarContactoEliminar(contacto: Contacto) : void {
-    this.botonEliminarPulsado.emit(contacto);
-  }*/
+
 
   @Output() contactoSeleccionado = new EventEmitter<Contacto>();
   notificarContactoSeleccionado(contacto: Contacto): void {
